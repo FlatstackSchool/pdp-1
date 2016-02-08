@@ -1,0 +1,6 @@
+.container
+  = render(article)
+
+  = link_to("Edit", [:edit, :user, article]) if policy(article).manage?
+
+= render("comments/discussion", comments: comments, comment: comment)
