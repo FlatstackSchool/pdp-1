@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :articles, only: %i(index show) do
-    resources :user_comments, only: %i(create)
-  end
+  resources :articles, only: %i(index show)
 
-  resources :user_articles, only: %i(new create edit update)
+  namespace :users do
+    resources :articles, only: %i(new create edit update) do
+      resources :comments, only: %i(create)
+    end
+  end
 
   root to: "pages#home"
 end
