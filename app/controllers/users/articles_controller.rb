@@ -1,6 +1,6 @@
 module Users
   class ArticlesController < Users::BaseController
-    before_action :authorize_user!, only: %i(update edit)
+    before_action :authorize_user!, only: %i(edit update)
 
     expose(:article, attributes: :article_attributes)
 
