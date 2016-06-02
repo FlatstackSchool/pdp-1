@@ -18,7 +18,7 @@ feature "Update Article" do
   end
 
   scenario "User updates other user's article" do
-    visit edit_user_article_path(create(:article))
+    visit edit_users_article_path(create(:article))
 
     expect(page).to have_content("You're not authorized to access this page")
   end

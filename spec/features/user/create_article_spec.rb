@@ -6,7 +6,7 @@ feature "Create Article" do
 
   background do
     login_as user
-    visit new_user_article_path
+    visit new_users_article_path
   end
 
   scenario "User creates article" do
